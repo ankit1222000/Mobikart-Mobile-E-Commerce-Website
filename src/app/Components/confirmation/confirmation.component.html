@@ -1,0 +1,126 @@
+<app-header></app-header>
+<!--================Order Details Area =================-->
+<section class="order_details section-margin--small">
+  <div id="printdiv">
+    <div class="container">
+      <p class="text-center billing-alert">Thank You {{loggeduser[0].NAME}}. Your order has been received.</p>
+      <div class="row mb-5">
+        <div class="col-md-6 col-xl-4 mb-4 mb-xl-0">
+          <div class="confirmation-card">
+            <h3 class="billing-title">Order Info</h3>
+            <table class="order-rable">
+              <tr>
+                <td>Order number</td>
+                <td>: {{model.data[0].ORDER_ID}}</td>
+              </tr>
+              <tr>
+                <td>Date</td>
+                <td>: {{newDate | date: 'MMM d, y'}}</td>
+              </tr>
+              <tr>
+                <td>Total</td>
+                <td>: {{model.data[0].TOTAL | currency: "&#8377;" }}</td>
+              </tr>
+              <tr>
+                <td>Payment method</td>
+                <td>: {{model.data[0].PAYMENT_MODE}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+       
+        <div class="col-md-6 col-xl-8 mb-4 mb-xl-0">
+          <div class="confirmation-card">
+            <h3 class="billing-title">Shipping Address</h3>
+            <table class="order-rable">
+              <tr>
+                <td>Street</td>
+                <td>: {{model.data[0].ADDRESS}}</td>
+              </tr>
+              <tr>
+                <td>State</td>
+                <td>: {{model.data[0].STATE}}</td>
+              </tr>
+              <tr>
+                <td>City</td>
+                <td>: {{model.data[0].CITY}}</td>
+              </tr>
+              <tr>
+                <td>Postcode</td>
+                <td>: {{model.data[0].PINCODE}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="order_details_table">
+        <h2>Order Details</h2>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Product</th>
+                <th scope="col"></th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let stores of stored" >
+                <td>
+                  <h5>{{stores[0].company}}&nbsp;{{stores[0].name}}</h5>
+                </td>
+                <td>
+                  <h5></h5>
+                </td>
+                <td>
+                  <h5>{{stores[0].price | currency: "&#8377;"}}</h5>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>
+                  <h4>Subtotal</h4>
+                </td>
+                <td>
+                  <h5></h5>
+                </td>
+                <td>
+                  <h5>{{model.data[0].TOTAL | currency: "&#8377;"}}</h5>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Shipping</h4>
+                </td>
+                <td>
+                  <h5></h5>
+                </td>
+                <td>
+                  <h5><span><del>&#8377;500.00</del><span style="color:green"> *Free</span></span></h5>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Total</h4>
+                </td>
+                <td>
+                  <h5></h5>
+                </td>
+                <td>
+                  <h4>{{model.data[0].TOTAL | currency: "&#8377;"}}</h4>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align: center;">
+  <button  class="btn btn-primary" (click)="Invoice($event,'printdiv')"><i class="fas fa-file-invoice"></i> Print Invoice</button>&nbsp;&nbsp;
+  <button  class="btn btn-primary" (click)="Shopping()"><i class="fas fa-shopping-basket"></i> Continue Shopping</button>
+</div>
+  </section>
+  <!--================End Order Details Area =================-->
+<app-footer></app-footer>

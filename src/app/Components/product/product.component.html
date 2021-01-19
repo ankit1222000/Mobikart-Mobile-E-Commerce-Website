@@ -1,0 +1,314 @@
+
+
+	<app-header></app-header>
+	<!--================ End Header Menu Area =================-->
+	
+	<!-- ================ start banner area ================= -->	
+	
+	<!-- ================ end banner area ================= -->
+
+
+  <!--================Single Product Area =================-->
+	<div class="product_image_area">
+		<div class="container">
+			<div class="row s_product_inner">
+				<div class="col-lg-6">
+					<img class="img-fluid" src="http://localhost:3000/{{models[0].PRODUCT_IMAGE}}" alt="">
+					<div class="owl-carousel owl-theme s_Product_carousel">
+						<div class="single-prd-item">
+							
+						</div>
+						<!-- <div class="single-prd-item">
+							<img class="img-fluid" src="img/category/s-p1.jpg" alt="">
+						</div>
+						<div class="single-prd-item">
+							<img class="img-fluid" src="img/category/s-p1.jpg" alt="">
+						</div> -->
+					</div>
+				</div>
+				<div class="col-lg-5 offset-lg-1">
+					<div class="s_product_text">
+						<h3>{{models[0].COMPANY_NAME }} {{models[0].PRODUCT_NAME}}</h3>
+						<h2>{{models[0].PRICE  | currency: "&#8377; "}}</h2>
+						<ul class="list">
+							<li><span>Company</span> : {{models[0].COMPANY_NAME }}</li>
+							<li><span>Availibility</span> : In Stock</li><br/>
+							<li><h4>Colors Available</h4></li>
+							<li>
+								<div class="btn-group btn-group-toggle " >
+								  <label class="btn btn-default text-center" >
+									
+									<i class="fas fa-circle fa-2x text-green "></i>
+									
+								  </label>
+								  <label class="btn btn-default text-center">
+									
+									<i class="fas fa-circle fa-2x text-blue"></i>
+								  </label>
+								  <label class="btn btn-default text-center">
+									
+									<i class="fas fa-circle fa-2x text-purple"></i>
+								  </label>
+								  <label class="btn btn-default text-center">
+									
+									<i class="fas fa-circle fa-2x text-red"></i>
+								  </label>
+								  <label class="btn btn-default text-center">
+									
+									<i class="fas fa-circle fa-2x text-orange"></i>
+								  </label>
+								</div>
+							</li>
+							<li>
+								<h4>Delivery: </h4>
+								<div class="input-group mb-3">
+									
+									<div class="input-group-prepend">
+										
+									  <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+									</div>
+									<input type="text" class="form-control form-inline col-6" placeholder="Enter Pincode ..." maxlength="6" oninput="this.value=this.value.replace(/[^0-9]/g,'');">&nbsp; <span> <button type="button" class="btn btn-block btn-danger btn-sm" (click)="Delivery($event)">Check</button></span>
+									
+									  
+								</div>
+							</li>
+							<li><span>{{delivery}}</span>	</li>
+						</ul><br/>
+						<ul class="list">
+							<li><img src="http://localhost:3000/{{models[0].COMPANY_NAME}}.png"> :  <span><b>Brand Warranty of 1 Year Available for Mobile and 6 Months for Accessories</b></span></li>
+							
+						</ul><br/>
+
+						
+              
+							<button class="button primary-btn" (click)="AddtoCart($event)">Add to Cart</button>
+							<span style="color: red;">&nbsp; &nbsp; {{alreadyadded}}</span>
+						
+						<div class="card_area d-flex align-items-center">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--================End Single Product Area =================-->
+
+	<!--================Product Description Area =================-->
+	<section class="product_description_area">
+		<div class="container">
+			<ul class="nav nav-tabs" id="myTab" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="false">Special Offers</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+					 aria-selected="false">Specification</a>
+				</li>
+				
+				<li class="nav-item">
+					<a class="nav-link active" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review"
+					 aria-selected="false">Reviews</a>
+				</li>
+			</ul>
+			<div class="tab-content" id="myTabContent">
+				<div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+					<h4>Available Offers</h4><br/>
+
+					<h6 > <i class="fas fa-tag" style="color:green"></i> Bank Offer 5% Unlimited Cashback on Flipkart Axis Bank Credit Card T&C </h6><hr>
+
+					<h6> <i class="fas fa-tag" style="color:green"></i> Bank Offer 5% off* with Axis Bank Buzz Credit Card T&C</h6><hr>
+
+					<h6> <i class="fas fa-sync-alt" style="color:green"></i> Get upto ₹13150 off on exchangeBuy with Exchange</h6><hr>
+
+					<h6><i class="fas fa-tag" style="color:green"></i> Special PriceExtra ₹6000 off (price inclusive of discount) T&C</h6><hr>
+
+					<h6><i class="far fa-calendar-check" style="color:green"></i> No cost EMI ₹1,777/month. Standard EMI also available View Plans</h6><hr>
+
+					<h6><i class="fab fa-google" style="color:green"></i> Get Google Nest Mini Charcoal at ₹1999 T&C</h6><hr>
+
+					<h6><i class="fab fa-google" style="color:green"></i> Partner OfferGet 6-month Google One trial on availing Exchange, No Cost EMI or Complete Mobile ProtectionKnow More</h6><hr>
+				</div>
+				<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+					<div class="table-responsive">
+						<table class="table">
+							<tbody>
+								<tr>
+									<td>
+										<h5>Company Name</h5>
+									</td>
+									<td>
+										<h5>{{models[0].COMPANY_NAME}} </h5>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h5>Product Name</h5>
+									</td>
+									<td>
+										<h5>{{models[0].PRODUCT_NAME}} </h5>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h5>Colour</h5>
+									</td>
+									<td>
+										<h5>{{models[0].COLOUR}}</h5>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h5>Variant</h5>
+									</td>
+									<td>
+										<h5>{{models[0].VARIANT}}</h5>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h5>Display</h5>
+									</td>
+									<td>
+										<h5>{{models[0].DISPLAY}}</h5>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h5>Processor</h5>
+									</td>
+									<td>
+										<h5>{{models[0].PROCESSOR}}</h5>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h5>Camera</h5>
+									</td>
+									<td>
+										<h5>{{models[0].CAMERA}}</h5>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h5>Operating System</h5>
+									</td>
+									<td>
+										<h5>{{models[0].OS}}</h5>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				
+				<div class="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">
+					<div class="row">
+						<div class="col-lg-6">
+							<h4>Customer Reviews</h4>
+							<h5 style="color:brown" *ngIf="NoReview==0">Be The First One to Add a Review &rArr;</h5>
+							
+							<div class="review_list">
+								<div class="review_item" *ngFor="let review of reviews">
+									<div class="media">
+										<div class="d-flex">
+											<img src="../../../assets/img/product/review-1.png" alt="">
+										</div>
+										<div class="media-body">
+											<h4>{{review.CUSTOMER_NAME}}</h4>
+											
+											<i class="fa fa-star" *ngFor='let in of counter(review.RATING) ;let i = index' ></i>
+											
+											
+										</div>
+									</div>
+									<p>{{review.REVIEW}}</p>
+								</div>
+								
+								
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="review_box">
+								<h4>Add a Review</h4>
+								<p *ngIf="loggeduser==null" style="color: brown;">You Need to Login to Review this Product</p>
+								<form #reviewForm="ngForm" class="form-contact form-review mt-3" *ngIf="loggeduser!=null">
+								<ul class="list" >
+									<p>Your Rating:</p><br/>
+									<div class="rating">
+										
+										<input id="star5" name="star" type="radio" value="5" class="radio-btn hide" [(ngModel)]="ratings.star" />
+										<label for="star5" ><i class="far fa-star"></i></label>
+										<input id="star4" name="star" [(ngModel)]="ratings.star" type="radio" value="4" class="radio-btn hide" />
+										<label for="star4" ><i class="far fa-star"></i></label>
+										<input id="star3" name="star" [(ngModel)]="ratings.star" type="radio" value="3" class="radio-btn hide" />
+										<label for="star3" ><i class="far fa-star"></i></label>
+										<input id="star2" name="star"  [(ngModel)]="ratings.star" type="radio" value="2" class="radio-btn hide" />
+										<label for="star2" ><i class="far fa-star"></i></label>
+										<input id="star1" name="star" [(ngModel)]="ratings.star" type="radio" value="1" class="radio-btn hide" />
+										<label for="star1" ><i class="far fa-star"></i></label>
+										<div class="clear"></div>
+									</div>
+								</ul>
+								
+								
+                
+                  
+                  <div class="form-group">
+                    <textarea class="form-control different-control w-100" name="review" id="review" cols="30" rows="5" placeholder="Enter Your Review" [(ngModel)]="ratings.review"></textarea>
+				  </div>
+				  <span style="color: red;">{{reviewError}}</span>
+                  <div class="form-group text-center text-md-right mt-3">
+					<button type="button" (click)="SendReview(); reviewForm.reset()" class="button button--active button-review">Submit Now</button>
+					
+				  </div>
+				  
+                </form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================End Product Description Area =================-->
+
+	<!--================ Start related Product area =================-->  
+	<section class="related-product-area section-margin--small mt-0">
+		<div class="container">
+			<div class="section-intro pb-60px">
+        
+        <h2> <span class="section-intro__style"> Trending Products</span></h2>
+      </div>
+			<div class="row mt-30">
+        <div *ngFor="let top of tops" class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
+			<div class="ribbon-wrapper">
+				<div class="ribbon bg-danger">
+				  HOT
+				</div>
+			  </div>
+          <div class="single-search-product-wrapper">
+			
+            <div class="single-search-product d-flex">
+				
+              <a [routerLink]="['/product/',top.PRODUCT_ID]"><img src="http://localhost:3000/{{top.PRODUCT_IMAGE}}" alt=""></a>
+              <div class="desc">
+                  <a [routerLink]="['/product/',top.PRODUCT_ID]"  class="title">{{top.PRODUCT_NAME}}</a>
+                  <div class="price">{{top.PRICE | currency: "&#8377; "}}</div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+		</div>
+	</section>
+	<!--================ end related Product area =================-->  	
+
+  <!--================ Start footer Area  =================-->	
+	<app-footer></app-footer>
+	<!--================ End footer Area  =================-->
+
+
+
+ 

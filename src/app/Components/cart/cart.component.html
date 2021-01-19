@@ -1,0 +1,113 @@
+
+<!---- ================Header=================-->
+<app-header></app-header>
+
+
+<!--================Cart Area =================-->
+<section class="cart_area">
+  <div class="container">
+      <div class="cart_inner">
+          <div class="table-responsive">
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <th scope="col">Product</th>
+                          <th scope="col">Price</th>
+                          <th scope="col">Delivery Charges</th>
+                          <th scope="col">Total</th>
+                          
+                      </tr>
+                  </thead>
+                  <tbody>
+                      
+                      <tr *ngFor="let stores of stored">
+                          <td>
+                              <div class="media">
+                                  <div class="d-flex">
+                                      <img src="http://localhost:3000/{{stores[0].image}}" height="150px" alt="">
+                                  </div>
+                                  <div class="media-body">
+                                      <h5>{{stores[0].company}}&nbsp;{{stores[0].name}}&nbsp;{{stores[0].colour}}&nbsp;{{stores[0].variant}}</h5>
+                                  </div>
+                              </div>
+                          </td>
+                          <td>
+                              <h5>{{stores[0].price | currency: "&#8377;"}}</h5>
+                              
+                          </td>
+                          <td>
+                              
+                                 <h5 *ngIf="stores[0].price > 499 "><del>{{500 | currency: "&#8377;" }} </del><span style="color: green">&nbsp; *Free</span></h5>
+                                  
+                              
+                                <h5 *ngIf="stores[0].price <= 499 " >{{500 | currency: "&#8377;" }}<span style="color:green">&nbsp; *only</span></h5>
+                                 
+                             
+                          </td>
+                          <td>
+                              <h5 *ngIf="stores[0].price > 499">{{ stores[0].price | currency: "&#8377;"}}</h5>
+                              <h5 *ngIf="stores[0].price <= 499">{{ stores[0].price+500 | currency: "&#8377;"}}</h5>
+                          </td>
+                          <td>
+                              <b><i class="fas fa-trash" style="cursor: pointer;" (click)="Delete($event,stores[0].name)"></i></b>
+                          </td>
+                      </tr>
+                      <br/>
+                      <tr class="bottom_button">
+                          <td>
+                              <div class="box-1">
+                              <button class="button" onmouseover="this.style.color='White';this.style.backgroundColor ='Red'"  onMouseOut="this.style.color='Black';this.style.backgroundColor ='White'" (click)="DeleteAll($event)"><img src='../../../assets/broom.png'>&nbsp;Clear Cart</button>
+                            </div>
+                          </td>
+                          <td>
+
+                          </td>
+                          <td>
+
+                          </td>
+                          <td>
+                              <div class="cupon_text d-flex align-items-center">
+                                  <input type="text" placeholder="Coupon Code">
+                                  <a class="primary-btn" >Apply</a>
+                                  <a class="button" >Have a Coupon?</a>
+                              </div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+
+                          </td>
+                          <td>
+
+                          </td>
+                          <td>
+                              <h5>Subtotal</h5>
+                          </td>
+                          <td>
+                              <h5>{{total | currency: "&#8377;"}}</h5>
+                          </td>
+                      </tr>
+                      
+                      <tr class="out_button_area">
+                          
+                          <td class="">
+
+                          </td>
+                          <td>
+
+                          </td>
+                          <td>
+                              <div class="checkout_btn_inner d-flex align-items-center">
+                                  <button class="gray_btn" [routerLink]="['/shop']">Continue Shopping</button>
+                                  <button class="primary-btn ml-2" [routerLink]="['/checkout']" [disabled]="(stored==null)">Proceed to checkout</button>
+                              </div>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</section>
+<!--============================== Footer Area =========================================-->
+<app-footer></app-footer>

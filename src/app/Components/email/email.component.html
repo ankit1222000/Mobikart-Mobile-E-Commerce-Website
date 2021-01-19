@@ -1,0 +1,48 @@
+<!--================Login Box Area =================-->
+<div class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-logo">
+         <b><b>Mobi</b>Kart</b>
+        </div>
+        <!-- /.login-logo -->
+        <div class="card">
+          <div class="card-body login-card-body">
+            <p class="login-box-msg">Sign in to start your session</p>
+      
+            <form #regForm='ngForm' (ngSubmit)='CustomerEmail(regForm)'>
+              <div class="input-group mb-3">
+                <input type="email" class="form-control" placeholder="Email" id="email" name="email" [(ngModel)]="model.email" required>
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-envelope"></span>
+                  </div>
+                </div>
+              </div>
+              <span style="color: red;">{{emailSend}}</span>
+              <div class="row">
+                
+                
+                <!-- /.col -->
+                <div class="col-4">
+                 
+                  <button type="submit" style="width:100px;margin-left: 120px;" class="btn btn-primary btn-block" [disabled]=!regForm.form.valid>Sign In</button>
+                </div>
+                <!-- /.col -->
+              </div>
+            </form>
+      
+           
+            <!-- /.social-auth-links -->
+      
+           <br/>
+            <p class="mb-2">
+              <a [routerLink]="['/register']" class="text-center">Register as a new Customer</a>
+            </p>
+            <p class="mb-2">
+              <a [routerLink]="['/']" class="text-center">Back to Mobikart</a>
+            </p>
+          </div>
+          <!-- /.login-card-body -->
+        </div>
+      </div>
+    </div>

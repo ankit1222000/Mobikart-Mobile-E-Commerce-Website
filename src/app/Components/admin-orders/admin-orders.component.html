@@ -1,0 +1,34 @@
+<div class="main_menu">
+    <nav class="navbar navbar-expand-lg bg-light navbar-light" >
+      <div class="container">
+        <a class="navbar-brand logo_h" ><img src="../../../assets/logo.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+            <h2 style="text-align: center; margin-left: 150px;">Customer Order List</h2>
+          <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
+        
+          <li><button type="button" class="btn btn-block btn-outline-danger" [routerLink]="['/adminDash']"><i class="fas fa-chevron-left"></i> Back to Dashboard</button></li>
+          </ul>
+
+        
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+<ag-grid-angular
+style="width: 2500px; height: 900px; margin-left: auto; margin-right: auto;" 
+    class="ag-theme-alpine"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    rowSelection="multiple"
+    [pagination]="true"
+    [animateRows]="true"
+    [paginationAutoPageSize]="true"
+    >
+</ag-grid-angular>

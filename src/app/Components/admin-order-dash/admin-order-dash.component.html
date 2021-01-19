@@ -1,0 +1,113 @@
+<header class="header_area">
+  
+    <div class="main_menu">
+      <nav class="navbar navbar-expand-lg bg-light navbar-light" >
+        <div class="container">
+          <a class="navbar-brand logo_h" ><img src="../../../assets/logo.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+			  <h2 style="text-align: center; margin-left: 150px;">Administrator</h2>
+            <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
+			<li><button type="button" class="btn btn-block btn-outline-danger" [routerLink]="['/productAdd']"><i class="fas fa-plus"></i> Add Product</button></li>&nbsp;&nbsp;&nbsp;&nbsp;
+			<li><button type="button" class="btn btn-block btn-outline-success" [routerLink]="['/adminDash']"><i class="fas fa-chevron-left"></i> Back to Dashboard</button></li>
+            </ul>
+
+          
+            
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+        <div class="wrapper">
+            <div class="container">
+                <div class="row">
+                    
+					
+                   
+                    <!--/.span3-->
+                    <div class="span9">
+                        <div class="content" style="width: 150%; margin-left: -90px;">
+                            
+                            <div class="module">
+							<div class="module-head">
+								<h2 class="box-title">Product List</h2>
+							</div>
+							<div class="module-body">
+								<div class="col-xs-12">
+									<div class="box">
+									  <div class="box-header">
+										
+						  
+										<div class="box-tools">
+										  <div class="input-group input-group-sm hidden-xs" >
+											<input type="text" name="table_search" class="form-control pull-right" placeholder="Search Your Product Here" [(ngModel)]="search">
+						  
+											
+										  </div>
+										  <br/>
+										</div>
+									  </div>
+									  <!-- /.box-header -->
+									  <div class="table-responsive" >
+										<table id="example" class="table table-hover" >
+										  <tbody><tr>
+											<th>Product</th>
+											<th>Name</th>
+											<th>Price</th>
+											<th>Colour</th>
+											<th>Variant</th>
+											<th>OS</th>
+											<th>Battery</th>
+											<th>Display</th>
+											<th>Processor</th>
+											<th>Camera</th>
+											<th></th>
+											
+											
+										  </tr>
+										  <tr *ngFor="let model of models | filter:search | paginate:{itemsPerPage:3,currentPage:p};">
+											<td><img src="http://localhost:3000/{{model.PRODUCT_IMAGE}}" height="60px"></td>
+											<td>{{model.PRODUCT_NAME}}</td>
+											<td>{{model.PRICE}}</td>
+											<td>{{model.COLOUR}}</td>
+											<td>{{model.VARIANT}}</td>
+											<td>{{model.OS}}</td>
+											<td>{{model.BATTERY}}</td>
+											<td>{{model.DISPLAY}}</td>
+											<td>{{model.PROCESSOR}}</td>
+											<td>{{model.CAMERA}}</td>
+											<td><i class="fas fa-trash" (click)="Delete(model.PRODUCT_ID)"></i></td>
+											
+										  </tr>
+										  
+										</tbody></table>
+										<pagination-controls (pageChange)="p=$event"></pagination-controls>
+									</div>
+									  <!-- /.box-body -->
+									</div>
+									<!-- /.box -->
+								  
+							</div>
+							</div>
+						</div>
+                        </div>
+                        <!--/.content-->
+                    </div>
+                    <!--/.span9-->
+                </div>
+            </div>
+            <!--/.container-->
+        </div>
+        <!--/.wrapper-->
+        <app-footer></app-footer>
+        
+        
+       
+      
+    

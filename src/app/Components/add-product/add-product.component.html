@@ -1,0 +1,220 @@
+
+<div class="jumbotron jumbotron-fluid jumbo">
+    <div class="container title">
+    <h1 class="animate__animated animate__fadeInUp">Add Product</h1>
+    </div>
+    </div>
+    
+    
+    
+    
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+    <div class="row justify-content-center" style="margin-top: -200px; z-index: 1px; ">
+    <div class="col-md-8">
+    <div class="card shadow animate__animated animate__fadeInUp" style="border: none;">
+    <div class="card-header">
+    <h4 class="card-title"><b>Add Your Product Here</b></h4>
+    </div>
+    <div class="card-body">
+    <form class="was-validated" #regForm='ngForm' (ngSubmit)="AddProduct(regForm)">
+    
+    <br>
+    <div class="row">
+    <div class="col-md-2 pr-1">
+    <label for="firstname"><b>Company Name</b></label>
+    </div>
+    <div class="col-md-9 pr-1">
+    <div class="form-group">
+    <input id="company" name="company" [(ngModel)]="model.company" #company="ngModel" type="text" class="form-control" required>
+    </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-2 pr-1">
+    <label for="RollNumber"><b>Product Name</b></label>
+    </div>
+    <div class="col-md-9 pr-1">
+    <div class="form-group">
+    <input type="text" class="form-control" id="product" name="product" [(ngModel)]="model.product" #product="ngModel" required>
+    </div>
+    </div>
+    </div>
+    
+    <div class="row">
+    <div class="col-md-2 pr-1">
+    <label for="RollNumber"><b>Price</b></label>
+    </div>
+    <div class="col-md-8 pr-1">
+    <div class="form-group">
+        <input type="range" min="5000" max="100000" step="5000" value="0" class="slider" id="range" name="range" [(ngModel)]="model.range" #range="ngModel"  required> 
+    </div>
+    </div>
+    <div class="col-md-2 pr-1">
+        <b>&#8377; {{model.range}}</b>
+        </div>
+    </div>
+    
+    <div class="row">
+    <div class="col-md-2 pr-1">
+    <label for="RollNumber"><b>Colour</b></label>
+    </div>
+    <div class="col-md-2 pr-1">
+    <div class="form-group">
+    <input type="text" class="form-control" id="colour" name="colour" [(ngModel)]="model.colour" #colour="ngModel" required>
+    </div>
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+                <div>
+                <label for="Variant"><b>Variant</b></label>
+                </div>
+
+                <div class="col-md-7 pr-1">
+                    <div class="radio">
+                        <label>
+                          <input  type="radio" name="Variant" value="3GB | 32GB" [(ngModel)]="model.Variant" #Variant="ngModel" required><b> 3GB | 32GB</b>
+                          &nbsp;
+                          <input  type="radio" name="Variant" value="4GB | 64GB" [(ngModel)]="model.Variant" #Variant="ngModel" required><b> 4GB | 64GB</b>
+                          &nbsp;
+                          <input  type="radio" name="Variant" value="8GB | 128GB" [(ngModel)]="model.Variant" #Variant="ngModel" required><b> 8GB | 128GB</b>
+                        </label>
+                      </div>
+                      </div>
+                     
+                      
+                        
+                        </div>
+    
+    <div class="row">
+        <div class="col-md-2 pr-1">
+        <label for="RollNumber"><b>Processor</b></label>
+        </div>
+        <div class="col-md-9 pr-1">
+        <div class="form-group">
+            <input type="text" class="form-control" id="processor" name="processor" [(ngModel)]="model.processor" #processor="ngModel" required>
+        </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 pr-1">
+        <label for="RollNumber"><b>Android/iOS</b></label>
+        </div>
+        <div class="col-md-9 pr-1">
+        <div class="form-group">
+            <input type="text" class="form-control" id="OS" name="OS" [(ngModel)]="model.OS" #OS="ngModel" required>
+        </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 pr-1">
+        <label for="RollNumber"><b>Battery</b></label>
+        </div>
+        <div class="col-md-9 pr-1">
+        <div class="form-group">
+            <input type="text" class="form-control" id="battery" name="battery" [(ngModel)]="model.battery" #battery="ngModel" required>
+        </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 pr-1">
+        <label for="RollNumber"><b>Display</b></label>
+        </div>
+        <div class="col-md-9 pr-1">
+        <div class="form-group">
+            <input type="text" class="form-control" id="display" name="display" [(ngModel)]="model.display" #display="ngModel" required>
+        </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 pr-1">
+        <label for="RollNumber"><b>Camera</b></label>
+        </div>
+        <div class="col-md-9 pr-1">
+        <div class="form-group">
+            <input type="text" class="form-control" id="camera" name="camera" [(ngModel)]="model.camera" #camera="ngModel" required>
+        </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2 pr-1">
+        <label for="RollNumber"><b>Photo Input</b></label>
+        </div>
+        <div class="col-md-3 pr-1">
+        <div class="form-group">
+            <input type="file" id="photo" name="photo" (change)="handleFileInput($event.target.files)">
+        </div>
+        </div>
+        
+        
+        
+        <div class="col-md-2 pr-2">
+        <label for="variant"><b>Product Available</b></label>
+        </div>
+        <div class="col-md-4 pr-1">
+            <div class="form-group">
+                
+                <input type="radio" class="radio-inline " name="available" value="true" [(ngModel)]="model.available" #available="ngModel" required> <b> YES</b>
+                    &nbsp;
+                    <input type="radio" class="radio-inline " name="available" value="false" [(ngModel)]="model.available" #available="ngModel" required> <b> NO</b>
+                    
+              </div>
+        </div>
+        </div>
+
+        {{model|json}}
+
+
+
+
+    <div class="text-right">
+        <button [routerLink]="['/adminDash']" class="btn btn-outline-success" style="outline: none;" >
+            <i class="fas fa-chevron-left"></i> Back to Dashboard</button>&nbsp;
+    <button type="submit" class="btn btn-outline-danger" [disabled]=!regForm.form.valid style="outline: none;" >
+        <i class="fas fa-plus"></i> Add Product</button>
+    </div>
+    <div class="clearfix"></div>
+    </form>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- The Modal >
+    <div class="modal fade" id="requestModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Confirm Update Request</h5>
+    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">×</span>
+    </button>
+    </div>
+    <div class="modal-body">Send "Update Request" for the following details to System Admin.</div>
+    <div class="modal-footer">
+    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+    <a class="btn" style="color: white; background-color: red;" data-toggle="modal" data-target="#updateModal" data-dismiss="modal">Send Request</a>
+    </div>
+    </div>
+    </div>
+    </div>
+    <-Send Succesfully Modal>
+    <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Request Send Sucessfully</h5>
+    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">×</span>
+    </button>
+    </div>
+    <div class="modal-body">Profile will be "Updated" within few days .</div>
+    <div class="modal-footer">
+    
+    <a class="btn" style="color: white; background-color: red;" href='#'>OK</a>
+    </div>
+    </div>
+    </div>
+</div-->

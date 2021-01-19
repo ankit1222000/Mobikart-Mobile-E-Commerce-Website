@@ -1,0 +1,61 @@
+<!--================Login Box Area =================-->
+<div class="hold-transition login-page">
+<div class="login-box">
+    <div class="login-logo">
+     <b><b>Mobi</b>Kart</b>
+    </div>
+    <!-- /.login-logo -->
+    <div class="card">
+      <div class="card-body login-card-body">
+        <p class="login-box-msg">Sign in to start your session</p>
+  
+        <form #regForm='ngForm' (ngSubmit)='CustomerLogin(regForm)'>
+          <div class="input-group mb-3">
+            <input type="email" class="form-control" placeholder="Email" id="email" name="email" [(ngModel)]="model.email" required>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="password" class="form-control" placeholder="Password" id="password" name="password" [(ngModel)]="model.password" required>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span id="showpassword" name="showpassword" (click)="togglePassword($event)" class="fas fa-eye"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-8">
+              <div class="icheck-primary">
+                <span style="color:red">{{alert}}</span>          
+              </div>
+            </div>
+            
+            <!-- /.col -->
+            <div class="col-4">
+             
+              <button type="submit" class="btn btn-primary btn-block" [disabled]=!regForm.form.valid>Sign In</button>
+            </div>
+            <!-- /.col -->
+          </div>
+        </form>
+  
+       
+        <!-- /.social-auth-links -->
+  
+        <p class="mb-1">
+          <a [routerLink]="['/email']" class="text-center">I forgot my password</a>
+        </p>
+        <p class="mb-2">
+          <a [routerLink]="['/register']" class="text-center">Register as a new Customer</a>
+        </p>
+        <p class="mb-2">
+          <a [routerLink]="['/']" class="text-center">Back to Mobikart</a>
+        </p>
+      </div>
+      <!-- /.login-card-body -->
+    </div>
+  </div>
+</div>

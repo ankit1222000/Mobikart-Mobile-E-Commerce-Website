@@ -1,0 +1,140 @@
+  <!--================Start Header Area =================-->
+  <app-header></app-header>
+<!--================End Header Area =================--> 
+ 
+ 
+ <!--================Checkout Area =================-->
+ <section class="checkout_area section-margin--small">
+    <div class="container">
+        
+     
+        <div class="billing_details">
+            <div class="row">
+                <form class="row contact_form " #regform='ngForm' (ngSubmit)="CheckoutProduct(regform)">
+                <div class="col-lg-8">
+                    <h3>Billing Details</h3>
+                    
+                        <div class="field col-md-6 form-group p_star ">
+                            
+                            <input type="text" name="pincode"  class="form-control" id="pincode" placeholder=" " maxlength="6" value="{{pin}}" oninput="this.value=this.value.replace(/[^0-9]/g,'');" [(ngModel)]="model.pincode" required>
+                            <label for="pincode">&nbsp;Pincode</label>
+                          
+                       
+                    </div>
+                    <div class="field col-md-6 form-group p_star ">
+                            
+                        <input type="text" name="locality" class="form-control" id="locality" placeholder=" " value="{{locality}}"[(ngModel)]="model.locality" required>
+                        <label for="locality">&nbsp;Locality</label>
+                      
+                   
+                    </div>
+                        <div class=" col-md-12 form-group p_star">
+                            <h6>&nbsp;Address (Area and Street)</h6>
+                            <textarea class="form-control" name="address" id="address" rows="1" placeholder=" " value="{{address}}" [(ngModel)]="model.address" required></textarea>
+                            
+                        </div>
+                        <div class="col-md-12 form-group p_star" >
+                            <h6>&nbsp; Select State</h6>
+                            <select class="country_select" id="state" name="state" [(ngModel)]="model.state" value="{{state}}" required >
+                                <option disabled>Select State</option>
+                                <option value="{{s}}" *ngFor="let s of states" >{{s}}</option>
+                                
+                            </select>
+                        </div>
+                        <div class="field col-md-6 form-group p_star ">
+                            
+                            <input type="text" name="city" class="form-control" id="city" placeholder=" "  [(ngModel)]="model.city" value="{{city}}" required>
+                            <label for="city">&nbsp;City/District/Town</label>
+                              
+                           
+                        </div>
+                        <div class="field col-md-6 form-group p_star">
+                            <input type="text" name="landmark" class="form-control" id="landmark" placeholder=" " >
+                            <label for="landmark">&nbsp;Landmark(Optional)</label>
+                        </div>
+                        
+                        <div class="col-md-6 form-group p_star">
+                            <span><b>Address Type</b></span>
+                            
+                            <div class="row">
+                                <div class="radion_btn">
+                                    <input  type="radio"  id="home" name="address_type" value="home" [(ngModel)]="model.address_type" [checked]="type == 'home' ? true : false" required >
+                                    <label for="home"><b>Home<br/>(All day delivery)</b></label>
+                                    
+                                    <div class="check"></div>
+                                 </div>
+                                 <div class="radion_btn">
+                                    <input type="radio"  id="work" name="address_type" value="work" [(ngModel)]="model.address_type" [checked]="type == 'work' ? true : false" required>
+                                    <label for="work"><b>Work <br/>(Delivery between 10AM-5PM)</b></label>
+                                    <div class="check"></div>
+                                 </div>
+                            </div>
+                        
+                                
+                           
+                            
+                               
+                                
+                           
+                        
+                        </div>
+                        
+                       <br>
+                        
+                       
+                        
+                    
+                </div>
+                <div class="col-lg-4">
+                    <div class="order_box">
+                        <h2>Your Order</h2>
+                        <ul class="list">
+                            <li><a href="#"><h4>Product <span>Total</span></h4></a></li>
+                            <li *ngFor="let stores of stored"><a style="cursor: pointer;" >
+                            {{stores[0].name}}<span class="middle"></span> <span class="last">{{stores[0].price | currency: "&#8377;"}}</span></a></li>
+                            
+                        </ul>
+                        <ul class="list list_2">
+                            <li><a style="cursor: pointer;" >Subtotal <span>{{total | currency: "&#8377;"}}</span></a></li>
+                            <li><a style="cursor: pointer;">Shipping <span><del>&#8377;500.00</del><span style="color:green">*Free</span></span></a></li>
+                            <li><a style="cursor: pointer;">Total <span>{{total | currency: "&#8377;"}}</span></a></li>
+                        </ul>
+                        <div class="payment_item">
+                            <div class="radion_btn">
+                                <input type="radio" name="payment" id="Cash" value="Cash" [(ngModel)]="model.payment" required>
+                                <label for="Cash">Cash on Delivery(COD)</label>
+                                <div class="check"></div>
+                            </div>
+                            <p>Please send a check to Store Name, Store Street, Store Town, Store State / County,
+                                Store Postcode.</p>
+                        </div>
+                        <div class="payment_item active">
+                            <div class="radion_btn">
+                                <input type="radio" id="Online" value="Online" name="payment" [(ngModel)]="model.payment" required>
+                                <label for="Online">Online (Debit/Credit/UPI) </label>
+                                &nbsp;&nbsp;&nbsp;<img src="../../../assets/img/product/card.jpg" alt="">
+                                <div class="check"></div>
+                            </div>
+                            <p>Pay via PayPal; you can pay with your credit card if you don’t have a PayPal
+                                account.</p>
+                        </div>
+                        <div class="creat_account">
+                            <input type="checkbox" id="f-option4" name="selector">
+                            <label for="f-option4">I’ve read and accept</label>
+                            <label for="f-option4">the terms & conditions* </label>
+                        </div>
+                        <div class="text-center">
+                          <button class="btn btn-primary" [disabled]=!regform.form.valid >Proceed to Pay</button>
+                        </div>
+                    </div>
+                </div>
+             </form>
+            </div>
+        </div>
+    </div>
+  </section>
+  <!--================End Checkout Area =================-->
+
+    <!--================Start Footer Area =================-->
+  <app-footer></app-footer>
+    <!--================End Footer Area =================-->

@@ -1,0 +1,111 @@
+<!-- ================ Header area start================= -->
+<app-header></app-header>
+<!-- ================ Header area end ================= -->
+
+<!-- ================ category section start ================= -->		  
+<section class="section-margin--small mb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-3 col-lg-4 col-md-5">
+          
+          <div class="sidebar-filter">
+            <div class="top-filter-head">Product Filters</div>
+            <div class="common-filter">
+              <div class="head">Brands</div>
+              <form  class="form" action="#">
+                <ul>
+                <div *ngFor="let company of companies" class="form-group">
+                  
+                
+                  <li class="filter-list"> <input type="radio" class="pixel-radio" name="brand"  (click)="CompanyFilter($event,company)"> {{company.company_name}} ({{company.count}})</li>
+                 
+                      
+                      
+                </div>
+              </ul>   
+              </form>
+            </div>
+            <div class="common-filter">
+              <div class="head">Color</div>
+              <form action="#">
+                <ul>
+                  <li class="filter-list"><input class="pixel-radio" type="radio" id="black" name="color"><label for="black">Black<span>(29)</span></label></li>
+                  <li class="filter-list"><input class="pixel-radio" type="radio" id="balckleather" name="color"><label for="balckleather">Black
+                      Leather<span>(29)</span></label></li>
+                  <li class="filter-list"><input class="pixel-radio" type="radio" id="blackred" name="color"><label for="blackred">Black
+                      with red<span>(19)</span></label></li>
+                  <li class="filter-list"><input class="pixel-radio" type="radio" id="gold" name="color"><label for="gold">Gold<span>(19)</span></label></li>
+                  <li class="filter-list"><input class="pixel-radio" type="radio" id="spacegrey" name="color"><label for="spacegrey">Spacegrey<span>(19)</span></label></li>
+                </ul>
+              </form>
+            </div>
+            <div class="common-filter">
+              <div class="head">Price</div>
+              <div class="price-range-area">
+                <div id="price-range"></div>
+                <div class="value-wrapper d-flex">
+                  <div class="price">Price:</div>
+                  <span>$</span>
+                  <div id="lower-value"></div>
+                  <div class="to">to</div>
+                  <span>$</span>
+                  <div id="upper-value"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-9 col-lg-8 col-md-7">
+          <!-- Start Filter Bar -->
+          <div class="filter-bar d-flex flex-wrap align-items-center">
+            
+            <div class="sorting mr-auto">
+              <button type="button" class="btn btn-block btn-outline-info btn-light" (click)="ngOnInit()">Show All Products</button>
+            </div>
+            
+              
+            
+            <div>
+              <div class="input-group filter-bar-search">
+                <input type="text" style="width:500px; border-color: aqua;"placeholder="Search Your Product Here..." [(ngModel)]="search">
+                <div class="input-group-append">
+                  <button type="button" style="border-color: aqua"><i class="ti-search" ></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Filter Bar -->
+          <!-- Start Best Seller -->
+          <section class="lattest-product-area pb-40 category-list">
+            <div class="row">
+              <div *ngFor="let shop of shopper | filter:search | paginate:{itemsPerPage:6,currentPage:p};" class="col-md-6 col-lg-4">
+                <div class="card text-center card-product">
+                  <div class="card-product__img">
+                    <a [routerLink]="['/product/',shop.PRODUCT_ID]"><img class="card-img" src="http://localhost:3000/{{shop.PRODUCT_IMAGE}}" alt=""></a>
+                   
+                  </div>
+                  <div class="card-body">
+                    <p>{{shop.COMPANY_NAME}}</p>
+                    <h4 class="card-product__title"><a [routerLink]="['/product/',shop.PRODUCT_ID]">{{shop.PRODUCT_NAME}}</a></h4>
+                    <p class="card-product__price">{{shop.PRICE | currency: "&#8377; "}}</p>
+                  </div>
+                </div>
+              </div>
+             
+            </div>
+            <pagination-controls (pageChange)="p=$event"></pagination-controls>
+          </section>
+          <!-- End Best Seller -->
+        </div>
+      </div>
+    </div>
+  </section>
+	<!-- ================ category section end ================= -->		  
+
+	<!-- ================ top product area start ================= -->	
+
+	<!-- ================ top product area end ================= -->		
+
+    <!-- ================ Footer area start ================= -->
+<app-footer></app-footer>
+    <!-- ================ Footer area end ================= -->

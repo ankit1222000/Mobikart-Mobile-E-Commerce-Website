@@ -1,0 +1,68 @@
+
+<!---- ================Header=================-->
+<app-header></app-header>
+
+
+<!--================Cart Area =================-->
+<br/>
+<h3 style="margin-left:50px">Your Orders</h3>
+<section class="cart_area">
+    
+  <div class="container">
+    
+      <div class="cart_inner">
+          
+          <div class="table-responsive">
+              <table class="table" style="width:100%">
+                  <thead>
+                      <tr>
+                          <th scope="col">Product</th>
+                          <th scope="col">Price</th>
+                          <th scope="col">Order Placed</th>
+                          <th scope="col">Order Id</th>
+                          <th scope="col">Payment Mode</th>
+                          
+                      </tr>
+                  </thead>
+                  <tbody>
+                      
+                      <tr *ngFor="let stores of stored">
+                          <td>
+                              <div class="media">
+                                  <div class="d-flex">
+                                      <img src="http://localhost:3000/{{stores.PRODUCT_IMAGE}}" height="150px" alt="">
+                                  </div>
+                                  <div class="media-body">
+                                      <h5>{{stores.PRODUCT_PURCHASED}}</h5>
+                                  </div>
+                              </div>
+                          </td>
+                          <td>
+                              <h5>{{stores.PRODUCT_PRICE | currency: "&#8377;"}}</h5>
+                              
+                          </td>
+                          <td style="width:20%;">
+                            <h5>{{stores.PURCHASE_DATE| date: 'MMM d, y'}}&nbsp;{{stores.PURCHASE_TIME}}</h5>
+                            
+                        </td>
+                        <td>
+                            <h5>{{stores.ORDER_ID}}</h5>
+                            
+                        </td>
+                        <td style="width:14%">
+                            <h5>{{stores.PAYMENT_MODE}}</h5>
+                            
+                        </td>
+
+                         
+                         
+                      </tr>
+                      
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</section>
+<!--============================== Footer Area =========================================-->
+<app-footer></app-footer>
