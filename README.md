@@ -4,7 +4,7 @@ MySQL, Angular, Express. js and Node. js based Mobile E-Commerce Store
 
 **Some Screenshots of the Project**
 
-###### Home Page
+### Home Page
 
 ![Home](https://user-images.githubusercontent.com/60085587/105044644-f9ee5700-5a8c-11eb-8e84-3aacf4482835.PNG)
 ![Home 2](https://user-images.githubusercontent.com/60085587/105044610-f064ef00-5a8c-11eb-911a-5ca90a0f94b5.PNG)
