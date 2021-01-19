@@ -58,10 +58,10 @@ MySQL, Angular, Express. js and Node. js based Mobile E-Commerce Store
 
 ## Customer Login , Change Password , Forgot Password and New Customer Panel
 
-![Login](https://user-images.githubusercontent.com/60085587/105048161-3f148800-5a91-11eb-9f4e-c99a0c3b0527.PNG)
-![Register](https://user-images.githubusercontent.com/60085587/105048166-3fad1e80-5a91-11eb-8289-12e799bab5fb.PNG)
-![Change Password](https://user-images.githubusercontent.com/60085587/105048124-34f28980-5a91-11eb-8932-ba3d1234d283.PNG)
-![Forgot Password](https://user-images.githubusercontent.com/60085587/105048110-30c66c00-5a91-11eb-947b-8b73a05fdcad.PNG)
+![l](https://user-images.githubusercontent.com/60085587/105057030-d03c2c80-5a9a-11eb-8dfb-1fb5f08307c8.PNG)
+![Register](https://user-images.githubusercontent.com/60085587/105057036-d16d5980-5a9a-11eb-9197-a38bc45a27bb.PNG)
+![Change Password](https://user-images.githubusercontent.com/60085587/105057015-cd413c00-5a9a-11eb-8960-c0d0b64ac406.PNG)
+![Forgot Password](https://user-images.githubusercontent.com/60085587/105057023-cf0aff80-5a9a-11eb-882a-f2ba2e72c46f.PNG)
 
 
 
