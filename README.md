@@ -1,5 +1,34 @@
 # Mobikart-Mobile-E-Commerce-Website
-MySQL, Angular, Express. js and Node. js based Mobile E-Commerce Store
+MySQL, Angular, Express.js and Node.js based Mobile E-Commerce Store
+
+**Frontend -> Angular**
+**Backend -> Node.js**
+**Middileware -> Express.js**
+**Database -> MySQL**
+
+It is an E-Commerce Website which aims to sell the mobile phones and have almost all the functions and pages that an ecomm website have, the project is divided into two major sections
+
+**1. Customer**
+     1.1 Home/ Dashboard 
+     1.2 Shop 
+     1.3 Cart 
+     1.4 Checkout
+     1.5 Billing Page (With SMS and Billing PDF)
+     1.6 Orders 
+     1.7 Login/ Signup/ Change Password/ Forgot Password Screen (OTP Verification)
+ 
+**2. Admin**
+     2.1 Admin Login
+     2.2 Admin Home / Dashboard
+     2.3 Add Product to Website Screen (Adding Product to Server)
+     2.4 All Products Management Screen (Products of Server Management)
+     2.5 All Customer Orders Management Screen
+
+  **Note: to redirect to Admin use the /admin route**
+     
+
+
+
 
 ## Getting Started
 
@@ -8,15 +37,15 @@ These instructions will get you a copy of the project up and running on your loc
 You'll need Angular 2+ (https://angular.io/guide/setup-local) [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com))  [Express.js] (https://www.npmjs.com/package/express) installed on your computer
 
 ```
-angular v7.0 or higher
-node@v10.16.0 or higher
-npm@6.9.0 or higher
+angular @v7.0 or higher
+node @v10.16.0 or higher
+npm @6.9.0 or higher
 express @4.17.1 or higher
-git@2.17.1 or higher
+git @2.17.1 or higher
 ```
 
 
-## Setting Database
+## Setting & Using Database
 
 ```
 # Moving to database table folder
@@ -51,6 +80,8 @@ $ source Product_Review.sql
 
 (Tables will be created)
 
+# Use SELECT Statement to check the data after the CRUD Operations into the MySql Tables.
+
 ```
 
 
@@ -58,26 +89,41 @@ $ source Product_Review.sql
 
 From your command line, clone and run Mobikart E-Commerce Website:
 
-```bash
+```
 # Clone this repository
 $ git clone https://github.com/ankit1222000/Mobikart-Mobile-E-Commerce-Website.git
+```
 
-# Install FrontEnd Angular dependencies
+### Starting & Using FrontEnd
+
+```
+# Install  Angular dependencies
 $ npm install
 
 # Start Angular Development Server
 $ ng serve
+(this will start the project on http://localhost:4200/)
 
-# Install Backend Express API Dependencies
-$ cd API
-$ npm install 
-
-#Start Express API server
-$ node index.js
+# To see the Dashboard you can head over to http://localhost:4200/dashboard.
+# To see the Admin Panel you can head over to http://localhost:4200/admin.  (**Password:Admin123**)
 
 # For Production use
-
 $ ng build --prod
+```
+
+### Starting & Using BackEnd
+
+```
+$ cd API
+
+# Install Backend Express API Dependencies
+$ npm install 
+
+# Start Express API server
+$ node index.js
+
+(You will notice now the data appers on the dashboard and is coming form the server running at Port:3000)
+
 ```
 
 
