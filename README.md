@@ -2,13 +2,17 @@
 MySQL, Angular, Express.js and Node.js based Mobile E-Commerce Store
 
 **Frontend -> Angular**
+
 **Backend -> Node.js**
+
 **Middileware -> Express.js**
+
 **Database -> MySQL**
 
 It is an E-Commerce Website which aims to sell the mobile phones and have almost all the functions and pages that an ecomm website have, the project is divided into two major sections
 
 **1. Customer**
+
      1.1 Home/ Dashboard 
      1.2 Shop 
      1.3 Cart 
@@ -18,13 +22,14 @@ It is an E-Commerce Website which aims to sell the mobile phones and have almost
      1.7 Login/ Signup/ Change Password/ Forgot Password Screen (OTP Verification)
  
 **2. Admin**
+
      2.1 Admin Login
      2.2 Admin Home / Dashboard
      2.3 Add Product to Website Screen (Adding Product to Server)
      2.4 All Products Management Screen (Products of Server Management)
      2.5 All Customer Orders Management Screen
 
-  **Note: to redirect to Admin use the /admin route**
+  
      
 
 
@@ -49,7 +54,7 @@ git @2.17.1 or higher
 
 ```
 # Moving to database table folder
-$ cd db
+$ cd DB
 
 # Login to root
 $ mysql -uroot -p
