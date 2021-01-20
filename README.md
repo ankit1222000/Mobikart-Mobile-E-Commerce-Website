@@ -19,7 +19,7 @@ git@2.17.1 or higher
 ## Setting Database
 
 ```
-#Moving to database table folder
+# Moving to database table folder
 $ cd db
 
 # Login to root
@@ -56,20 +56,28 @@ $ source Product_Review.sql
 
 ## How To Use 
 
-From your command line, clone and run developerFolio:
+From your command line, clone and run Mobikart E-Commerce Website:
 
 ```bash
 # Clone this repository
 $ git clone https://github.com/ankit1222000/Mobikart-Mobile-E-Commerce-Website.git
 
-# Go into the repository
-$ cd RESTful-CRUD-API
-
-# Install dependencies
+# Install FrontEnd Angular dependencies
 $ npm install
 
-#Start's Express API server
-$ node server.js
+# Start Angular Development Server
+$ ng serve
+
+# Install Backend Express API Dependencies
+$ cd API
+$ npm install 
+
+#Start Express API server
+$ node index.js
+
+# For Production use
+
+$ ng build --prod
 ```
 
 
