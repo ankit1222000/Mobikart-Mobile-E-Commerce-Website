@@ -28,6 +28,9 @@ It is an E-Commerce Website which aims to sell the mobile phones and have almost
      2.3 Add Product to Website Screen (Adding Product to Server)
      2.4 All Products Management Screen (Products of Server Management)
      2.5 All Customer Orders Management Screen
+     
+
+**Note: For Using the SMS Function after Order using FAST2SMS SMS API you need to genereate your own API key at https://docs.fast2sms.com/ and paste it in the backend index.js**
 
   
      
