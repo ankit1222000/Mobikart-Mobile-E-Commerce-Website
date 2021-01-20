@@ -1,6 +1,78 @@
 # Mobikart-Mobile-E-Commerce-Website
 MySQL, Angular, Express. js and Node. js based Mobile E-Commerce Store
 
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+You'll need Angular 2+ (https://angular.io/guide/setup-local) [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com))  [Express.js] (https://www.npmjs.com/package/express) installed on your computer
+
+```
+angular v7.0 or higher
+node@v10.16.0 or higher
+npm@6.9.0 or higher
+express @4.17.1 or higher
+git@2.17.1 or higher
+```
+
+
+## Setting Database
+
+```
+#Moving to database table folder
+$ cd db
+
+# Login to root
+$ mysql -uroot -p
+Your Password:
+
+# Create Database
+$ CREATE DATABASE Mobikartdb;
+
+# Create New  Database User
+$ create user 'Mobikart'@'localhost' identified by 'Mobikart@123';   
+
+# Grant All Privileges to User
+$ grant all privileges on Mobikartdb.* to 'Mobikart'@'localhost' with grant option;
+
+# Now quit from mysql, then login as accounting by typing
+$ mysql -uMobikart -p
+$ Your Password: Mobikart@1234
+
+# Choose Database
+$ use Mobikartdb
+
+# Create Customer Table in Database
+$ source Customer.sql
+$ source Company.sql
+$ source Orders.sql
+$ source Product.sql
+$ source Product_Review.sql
+
+(Tables will be created)
+
+```
+
+
+## How To Use 
+
+From your command line, clone and run developerFolio:
+
+```bash
+# Clone this repository
+$ git clone https://github.com/ankit1222000/Mobikart-Mobile-E-Commerce-Website.git
+
+# Go into the repository
+$ cd RESTful-CRUD-API
+
+# Install dependencies
+$ npm install
+
+#Start's Express API server
+$ node server.js
+```
+
+
 
 **Some Screenshots of the Project**
 
