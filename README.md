@@ -30,7 +30,12 @@ It is an E-Commerce Website which aims to sell the mobile phones and have almost
      2.5 All Customer Orders Management Screen
      
 
-**Note: For Using the SMS Function after Order using FAST2SMS SMS API you need to genereate your own API key at https://docs.fast2sms.com/ and paste it in the backend index.js**
+**Note:**
+```
+  1.For Using the SMS Function after Order using FAST2SMS SMS API you need to genereate your own API key at https://docs.fast2sms.com/ and paste it in the backend index.js
+  2. You Need to upload the Phone Product Photo at time of Adding Product to Server
+  3. All the Phone Product Photos will be stored into the uploads folder at the backend
+ ```
 
   
      
